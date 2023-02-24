@@ -1,0 +1,87 @@
+.act-wrapper{
+    margin: 0 auto;
+    padding: 0 5%;
+    color: #666;
+    font-family: 'Noto Sans JP', sans-serif!important;
+}
+
+
+h3{
+    font-size: 1.2rem;
+}
+.section-wrap p{
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    margin-left: 25px;
+}
+.act-title{
+    width: 100%;
+    margin: 10px auto 20px auto!important;
+    color: #0185FF!important;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+
+}
+.act-subtitle{
+    font-size: 1.25em;
+    color: #0185FF!important;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.activity-popup-detail-content .section-wrap-title:before {
+    width: 10px;
+    height: 14px;
+}
+.act-notice{
+    font-weight: 300!important;
+    color: #666;
+}
+.mark-red{
+    color: #940202!important;
+    font-weight: 400;
+}
+.supermark-red{
+    color: #fff!important;
+    background-color: red;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.nisspay{
+    color: #fff!important;
+    background-color: #59B587;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    max-width: 665px;
+    margin: 10px auto;
+}
+.level-series{
+	display: block;
+    max-width: 600px;
+    margin: 10px auto;
+}
+.level-series2{
+	display: none;
+    max-width: 600px;
+    margin: 10px auto;
+}
+/* .level-series2 img{
+    width: 100%;
+} */
+
+@media (max-width:599px){
+	.level-series{
+	display: none;
+	}
+	.level-series2{
+		display: block;
+	}
+}

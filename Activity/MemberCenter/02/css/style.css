@@ -1,0 +1,648 @@
+﻿body {
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+img {
+    width: 100%;
+}
+
+a:hover {
+    opacity: .8;
+}
+
+a {
+    cursor: pointer;
+}
+
+.btn {
+    width: 61.6%;
+    margin: 6.95vw auto;
+}
+
+header {
+    position: relative;
+    background-image: url(../image/header.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 66.9vw;
+    max-height: 800px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+    header h1 {
+        position: absolute;
+        top: 5%;
+        left: 4%;
+        width: 13.6%;
+    }
+
+    header h2 {
+        font-size: min(3.34vw, 46px);
+        color: #FFFF00;
+        position: absolute;
+        top: 5%;
+        left: 20%;
+        font-weight: 900;
+    }
+
+    header h3 {
+        font-size: min(9.1vw,109px);
+        color: #FFFF00;
+        position: absolute;
+        top: 60%;
+        left: 9%;
+        font-weight: 900;
+    }
+
+.header-con {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    background-color: #02268B;
+    padding: 3% 0;
+}
+
+    .header-con h2 {
+        font-family: '游明朝', 'Yu Mincho', YuMincho, 'Hiragino Mincho Pro', serif;
+        text-align: center;
+        font-size: min(8vw, 95px);
+        color: #fff;
+    }
+
+        .header-con h2 span {
+            display: block;
+            font-size: min(9.7vw, 116px);
+            color: #FFFF00;
+        }
+
+.top {
+    text-align: center;
+    padding: 0 0 3%;
+}
+
+    .top p {
+        font-size: min(3.6vw, 43.6px);
+        line-height: min(5.1vw, 62px);
+    }
+
+    .top h2 {
+        font-size: min(4.87vw, 58.4px);
+        color: #fff;
+        background-color: #02268B;
+        padding: 2% 0;
+        width: 57%;
+        margin: 8% auto 5%;
+    }
+
+    .top h3 {
+        width: 54%;
+        margin: 0 auto;
+    }
+
+.reason {
+    background-image: url(../image/reason.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 83vw;
+    max-height: 996px;
+    position: relative;
+}
+
+    .reason ul {
+        position: absolute;
+        left: 22%;
+        top: 20%;
+    }
+
+        .reason ul li {
+            font-size: min(4.36vw, 52px);
+            position: relative;
+            margin-bottom: 5%;
+        }
+
+            .reason ul li span {
+                display: block;
+                font-size: min(1.8vw, 21px);
+                text-indent: 8%;
+                margin-top: 1%;
+            }
+
+                .reason ul li span.check {
+                    width: 4.2vw;
+                    max-width: 53px;
+                    display: inline-block;
+                    padding-right: 2%;
+                    margin-top: 0;
+                }
+
+.flow {
+    height: 172.4vw;
+    max-height: 2061px;
+    background-image: url(../image/flow.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    font-family: 'Noto Sans JP', sans-serif;
+    padding-top: 7%;
+}
+
+    .flow h2 {
+        font-weight: 900;
+        background-color: #FFFF00;
+        font-size: min(4.2vw, 50.6px);
+        padding: 1% 0;
+        width: 78%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .flow h3 {
+        font-weight: 900;
+        color: #FFFF00;
+        font-size: min(8.7vw, 104px);
+        text-align: center;
+        padding-left: 3%;
+        margin-top: 3%;
+    }
+
+        .flow h3 span {
+            font-size: min(10vw, 122px);
+            margin: 0 2%;
+        }
+
+    .flow ul {
+        display: flex;
+        flex-wrap: wrap;
+        width: 72.5%;
+        justify-content: space-between;
+        margin: 5% auto 0;
+    }
+
+        .flow ul li {
+            width: 48.4%;
+            margin-bottom: 5%;
+        }
+
+            .flow ul li p {
+                font-size: min(2.8vw, 33.6px);
+                color: #fff;
+                font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+                font-weight: 800;
+                text-indent: -.8em;
+                padding-left: 0.8em;
+                margin-top: 3%;
+            }
+
+.recom h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    background-color: #000;
+    color: #FFFF00;
+    text-align: center;
+    font-size: min(6.17vw, 74.1px);
+    padding: 5% 0;
+}
+
+.recom h3 {
+    width: 90%;
+    margin: 4% auto;
+}
+
+.recom h4 {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.recom div {
+    background-color: #FBF9D1;
+    position: relative;
+    padding: 5% 0;
+}
+
+    .recom div ul {
+        width: 65%;
+        margin: 0% auto;
+    }
+
+        .recom div ul li {
+            font-size: min(4.8vw, 57px);
+            margin: 4% 0;
+        }
+
+            .recom div ul li span.check {
+                width: 7%;
+                display: inline-block;
+                padding-right: 1%;
+            }
+
+            .recom div ul li span.small {
+                font-size: min(2.4vw, 28px);
+                display: block;
+                margin-left: 7%;
+                margin-top: 1%;
+            }
+
+    .recom div h6 {
+        width: 22.6%;
+        position: absolute;
+        top: 50%;
+        right: 3%;
+        transform: translateY(-50%);
+    }
+
+.voice {
+    position: relative;
+    background-image: url(../image/voice.png);
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 23%;
+    padding-bottom: 5%;
+}
+
+    .voice h1 {
+        position: absolute;
+        width: 96%;
+        left: 3%;
+        top: 5%;
+        text-align: center;
+        color: #FFFF00;
+        font-weight: bold;
+        font-size: 5.2vw;
+        -webkit-text-stroke: 0.14vw red;
+        text-shadow: 10px 10px 9px #0A0000;
+    }
+
+    .voice ul {
+        position: absolute;
+        width: 40.6%;
+        font-size: 1.46vw;
+        line-height: 2.56vw;
+        font-weight: bold;
+        top: 20.5%;
+        left: 40%;
+    }
+
+        .voice ul li {
+            margin-bottom: 28%;
+        }
+
+            .voice ul li:nth-child(3) {
+                margin-bottom: 40%;
+            }
+
+            .voice ul li h3 {
+                margin-bottom: 1.68vw;
+            }
+
+            .voice ul li p {
+                text-align: justify;
+            }
+
+.present {
+    position: relative;
+}
+
+    .present h1 {
+        position: absolute;
+        font-size: 6.6vw;
+        font-weight: bold;
+        top: 22%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .present div {
+        position: absolute;
+        font-weight: bold;
+        top: 36%;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+    }
+
+    .present h3 {
+        font-size: 3.44vw;
+        -webkit-text-stroke: 0.14vw red;
+        text-shadow: 10px 10px 9px #0A0000;
+    }
+
+        .present h3 span {
+            font-size: 4.17vw;
+        }
+
+    .present h4 {
+        font-size: 5.42vw;
+        -webkit-text-stroke: 0.14vw red;
+        text-shadow: 10px 10px 9px #0A0000;
+    }
+
+    .present .btn {
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+.footer {
+    position: relative;
+}
+
+    .footer h1 {
+        position: absolute;
+        font-weight: bold;
+        font-size: 3vw;
+        line-height: 4.6vw;
+        width: 100%;
+        text-align: center;
+        top: 22%;
+    }
+
+    .footer h3 {
+        position: absolute;
+        font-weight: bold;
+        font-size: 4.9vw;
+        line-height: 6.6vw;
+        width: 100%;
+        text-align: center;
+        top: 46%;
+    }
+
+    .footer .btn {
+        position: absolute;
+        bottom: -2%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+footer {
+    position: relative;
+}
+
+    footer h3 {
+        width: 9.37%;
+        margin: 8.2vw auto 7.8vw;
+    }
+
+    footer h4 {
+        position: absolute;
+        width: 33%;
+        bottom: -7.8vw;
+        left: 55%;
+    }
+
+@media(min-width:1200px) {
+    .place h3 {
+        font-size: 73px;
+        letter-spacing: -12px;
+    }
+
+        .place h3 span {
+            letter-spacing: -55px;
+            left: -12%;
+        }
+
+    .place p {
+        font-size: 23px;
+        line-height: 34px;
+    }
+
+    .place h4 {
+        font-size: 30px;
+        line-height: 53px;
+    }
+
+    .place h5 {
+        font-size: 30px;
+        line-height: 53px;
+    }
+
+    .ansin {
+        padding-bottom: 340px;
+    }
+
+        .ansin h2 {
+            margin: 100px auto 0;
+        }
+
+        .ansin h3 {
+            font-size: 47px;
+            line-height: 69px;
+            margin: 84px 0 63px;
+        }
+
+        .ansin p {
+            font-size: 37px;
+            line-height: 56px;
+        }
+
+    .voice h1 {
+        font-size: 71px;
+        -webkit-text-stroke: 2px red;
+        text-shadow: 10px 10px 9px #0A0000;
+    }
+
+    .voice ul {
+        font-size: 17px;
+        line-height: 34px;
+        top: 20%;
+    }
+
+        .voice ul li {
+            margin-bottom: 25%;
+        }
+
+            .voice ul li:nth-child(3) {
+                margin-bottom: 30%;
+            }
+
+
+            .voice ul li h3 {
+                margin-bottom: 25px;
+            }
+
+    .present h1 {
+        position: absolute;
+        font-size: 90px;
+    }
+
+
+    .present h3 {
+        font-size: 47px;
+        -webkit-text-stroke: 2px red;
+        text-shadow: 10px 10px 9px #0A0000;
+    }
+
+        .present h3 span {
+            font-size: 57px;
+        }
+
+    .present h4 {
+        font-size: 70px;
+    }
+
+    .footer h1 {
+        font-size: 36px;
+        line-height: 63px;
+    }
+
+    .footer h3 {
+        font-size: 68px;
+        line-height: 90px;
+    }
+}
+
+@media(max-width:570px) {
+    .voice ul {
+        line-height: 2.96vw;
+        top: 19%;
+        left: 40%;
+    }
+
+        .voice ul li {
+            margin-bottom: 16%;
+        }
+
+            .voice ul li:nth-child(3) {
+                margin-bottom: 25%;
+            }
+}
+
+@media(max-width:500px) {
+    header h2 {
+        top: 10%;
+        left: 25%;
+    }
+
+    .voice ul {
+        width: 50%;
+        line-height: 2.96vw;
+        top: 15%;
+        left: 34%;
+        transform: scale(.9);
+    }
+
+        .voice ul li {
+            margin-bottom: 28%;
+        }
+
+    .place p {
+        font-weight: bold;
+        font-size: 1.68vw;
+        position: absolute;
+        line-height: 15px;
+        top: 13%;
+        left: 37%;
+    }
+
+    .reason ul {
+        position: absolute;
+        left: 20%;
+        top: 20%;
+        width: 60%;
+    }
+
+        .reason ul li span.small {
+            display: block;
+            font-size: min(1.8vw, 21px);
+            text-indent: -1.3em;
+            margin-top: 1%;
+            padding-left: 9%;
+        }
+}
+
+@media(max-width:460px) {
+    .voice ul {
+        width: 61.6%;
+        line-height: 3.96vw;
+        top: 6%;
+        left: 27%;
+        transform: scale(.7);
+    }
+
+        .voice ul li {
+            margin-bottom: 26%;
+        }
+}
+
+@media(max-width:405px) {
+
+
+    .voice ul li {
+        margin-bottom: 22%;
+    }
+
+        .voice ul li:nth-child(3) {
+            margin-bottom: 31%;
+        }
+}
+
+@media(max-width:375px) {
+
+    .voice ul {
+        top: 5%;
+    }
+
+        .voice ul li {
+            margin-bottom: 26%;
+        }
+
+            .voice ul li:nth-child(3) {
+                margin-bottom: 26%;
+            }
+}
+
+@media(max-width:345px) {
+
+    .voice ul {
+        top: 3%;
+    }
+
+        .voice ul li {
+            margin-bottom: 23%;
+        }
+
+            .voice ul li:nth-child(3) {
+                margin-bottom: 25%;
+            }
+}
+
+@media(max-width:335px) {
+    .voice ul {
+        top: 4%;
+    }
+
+        .voice ul li {
+            margin-bottom: 20%;
+        }
+
+            .voice ul li:nth-child(3) {
+                margin-bottom: 25%;
+            }
+}
+
+
+/* 2022-02-27 kuronus add */
+
+.voice_container {
+    background-color: rgba(255,255,255,0.6);
+    width: 88%;
+    padding: 2% 4% 0% 4%;
+    margin: 0px auto;
+    /*
+	position		: absolute;
+	top				: 12%;
+	left			: 6%;
+*/
+}
+
+.voice_block {
+    background-color: rgba(255,255,255,0.6);
+    border: 2px solid #976357;
+    padding: 4%;
+    font-size: min(3.3vw, 21px);
+}

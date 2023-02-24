@@ -1,0 +1,315 @@
+{
+  "Name": "VIPSetting",
+  "State": 0,
+  "StartDate": "2022/10/01 11:00:00",
+  "EndDate": "2099/11/01 11:00:00",
+  "Title": "會員升降級",
+  "KeepLevelDays": "30",
+  "VIPSetting": [
+    {
+      "UserLevelIndex": 0,
+      "Description": "VIP0",
+      "DepositMinValue": 0,
+      "DepositMaxValue": 10000,
+      "ValidBetMinValue": 0,
+      "ValidBetMaxValue": 100000,
+      "KeepValidBetValue": 0,
+      "BuyChipAddRate": []
+    },
+    {
+      "UserLevelIndex": 1,
+      "Description": "青銅",
+      "DepositMinValue": 10000,
+      "DepositMaxValue": 88000,
+      "ValidBetMinValue": 100000,
+      "ValidBetMaxValue": 880000,
+      "KeepValidBetValue": 60000,
+      "BuyChipAddRate": [
+        {
+          "GameAccountingCode": "Slot",
+          "BuyChipRate": 0.15,
+          "ThresholdRate": 0
+        }
+      ]
+    },
+    {
+      "UserLevelIndex": 2,
+      "Description": "白銀",
+      "DepositMinValue": 88000,
+      "DepositMaxValue": 180000,
+      "ValidBetMinValue": 880000,
+      "ValidBetMaxValue": 1800000,
+      "KeepValidBetValue": 470000,
+      "BuyChipAddRate": [
+        {
+          "GameAccountingCode": "Sports",
+          "BuyChipRate": 0.2,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Live",
+          "BuyChipRate": 0.2,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Slot",
+          "BuyChipRate": 0.3,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Electron",
+          "BuyChipRate": 0.2,
+          "ThresholdRate": 0
+        }
+      ]
+    },
+    {
+      "UserLevelIndex": 3,
+      "Description": "勇士",
+      "DepositMinValue": 180000,
+      "DepositMaxValue": 320000,
+      "ValidBetMinValue": 1800000,
+      "ValidBetMaxValue": 3800000,
+      "KeepValidBetValue": 870000,
+      "BuyChipAddRate": [
+        {
+          "GameAccountingCode": "Sports",
+          "BuyChipRate": 0.2,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Live",
+          "BuyChipRate": 0.2,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Slot",
+          "BuyChipRate": 0.3,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Electron",
+          "BuyChipRate": 0.2,
+          "ThresholdRate": 0
+        }
+      ]
+    },
+    {
+      "UserLevelIndex": 4,
+      "Description": "白金",
+      "DepositMinValue": 380000,
+      "DepositMaxValue": 880000,
+      "ValidBetMinValue": 3800000,
+      "ValidBetMaxValue": 8800000,
+      "KeepValidBetValue": 1600000,
+      "BuyChipAddRate": [
+        {
+          "GameAccountingCode": "Sports",
+          "BuyChipRate": 0.3,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Live",
+          "BuyChipRate": 0.3,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Slot",
+          "BuyChipRate": 0.4,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Electron",
+          "BuyChipRate": 0.3,
+          "ThresholdRate": 0
+        }
+      ]
+    },
+    {
+      "UserLevelIndex": 5,
+      "Description": "鑽石",
+      "DepositMinValue": 880000,
+      "DepositMaxValue": 1380000,
+      "ValidBetMinValue": 8800000,
+      "ValidBetMaxValue": 13800000,
+      "KeepValidBetValue": 3400000,
+      "BuyChipAddRate": [
+        {
+          "GameAccountingCode": "Sports",
+          "BuyChipRate": 0.3,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Live",
+          "BuyChipRate": 0.3,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Slot",
+          "BuyChipRate": 0.4,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Electron",
+          "BuyChipRate": 0.3,
+          "ThresholdRate": 0
+        }
+      ]
+    },
+    {
+      "UserLevelIndex": 6,
+      "Description": "精英",
+      "DepositMinValue": 1380000,
+      "DepositMaxValue": 1800000,
+      "ValidBetMinValue": 13800000,
+      "ValidBetMaxValue": 18000000,
+      "KeepValidBetValue": 4800000,
+      "BuyChipAddRate": [
+        {
+          "GameAccountingCode": "Sports",
+          "BuyChipRate": 0.4,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Live",
+          "BuyChipRate": 0.4,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Slot",
+          "BuyChipRate": 0.5,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Electron",
+          "BuyChipRate": 0.4,
+          "ThresholdRate": 0
+        }
+      ]
+    },
+    {
+      "UserLevelIndex": 7,
+      "Description": "金鑽",
+      "DepositMinValue": 1800000,
+      "DepositMaxValue": 3800000,
+      "ValidBetMinValue": 18000000,
+      "ValidBetMaxValue": 38000000,
+      "KeepValidBetValue": 5700000,
+      "BuyChipAddRate": [
+        {
+          "GameAccountingCode": "Sports",
+          "BuyChipRate": 0.4,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Live",
+          "BuyChipRate": 0.4,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Slot",
+          "BuyChipRate": 0.5,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Electron",
+          "BuyChipRate": 0.4,
+          "ThresholdRate": 0
+        }
+      ]
+    },
+    {
+      "UserLevelIndex": 8,
+      "Description": "大師",
+      "DepositMinValue": 3800000,
+      "DepositMaxValue": 6800000,
+      "ValidBetMinValue": 38000000,
+      "ValidBetMaxValue": 68000000,
+      "KeepValidBetValue": 10900000,
+      "BuyChipAddRate": [
+        {
+          "GameAccountingCode": "Sports",
+          "BuyChipRate": 0.5,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Live",
+          "BuyChipRate": 0.5,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Slot",
+          "BuyChipRate": 0.7,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Electron",
+          "BuyChipRate": 0.5,
+          "ThresholdRate": 0
+        }
+      ]
+    },
+    {
+      "UserLevelIndex": 9,
+      "Description": "宗師",
+      "DepositMinValue": 6800000,
+      "DepositMaxValue": 8800000,
+      "ValidBetMinValue": 68000000,
+      "ValidBetMaxValue": 88000000,
+      "KeepValidBetValue": 17500000,
+      "BuyChipAddRate": [
+        {
+          "GameAccountingCode": "Sports",
+          "BuyChipRate": 0.5,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Live",
+          "BuyChipRate": 0.5,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Slot",
+          "BuyChipRate": 0.8,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Electron",
+          "BuyChipRate": 0.5,
+          "ThresholdRate": 0
+        }
+      ]
+    },
+    {
+      "UserLevelIndex": 10,
+      "Description": "史詩",
+      "DepositMinValue": 8800000,
+      "DepositMaxValue": 0,
+      "ValidBetMinValue": 88000000,
+      "ValidBetMaxValue": 0,
+      "KeepValidBetValue": 20000000,
+      "BuyChipAddRate": [
+        {
+          "GameAccountingCode": "Sports",
+          "BuyChipRate": 0.6,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Live",
+          "BuyChipRate": 0.6,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Slot",
+          "BuyChipRate": 1,
+          "ThresholdRate": 0
+        },
+        {
+          "GameAccountingCode": "Electron",
+          "BuyChipRate": 0.6,
+          "ThresholdRate": 0
+        }
+      ]
+    }
+  ]
+}

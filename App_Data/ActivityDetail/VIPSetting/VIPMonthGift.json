@@ -1,0 +1,37 @@
+{
+  "Name": "VIPMonthGift",
+  "State": 0,
+  "StartDate": "2022/02/20 00:00:00",
+  "EndDate": "2099/05/31 00:00:00",
+  "Title": "Monthly Lucky Bonus",
+  "SubTitle": "Monthly Lucky Bonus",
+  "CollectAreaType": 2,
+  "MinLevelIndex": 6,
+  "VIP": [
+    {
+      "UserLevelIndex": 6,
+      "BonusValue": 1000,
+      "ThresholdValue": 20000
+    },
+    {
+      "UserLevelIndex": 7,
+      "BonusValue": 1200,
+      "ThresholdValue": 24000
+    },
+    {
+      "UserLevelIndex": 8,
+      "BonusValue": 1500,
+      "ThresholdValue": 30000
+    },
+    {
+      "UserLevelIndex": 9,
+      "BonusValue": 2000,
+      "ThresholdValue": 40000
+    },
+    {
+      "UserLevelIndex": 10,
+      "BonusValue": 3000,
+      "ThresholdValue": 60000
+    }
+  ]
+}

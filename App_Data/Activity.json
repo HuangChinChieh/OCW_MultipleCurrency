@@ -1,0 +1,80 @@
+{
+  "BasicPath": "/App_Data/ActivityDetail/",
+  "Deposit": [
+    {
+      "Name": "Act016",
+      "Path": "2023_2/Act016.json",
+      "MethodName": "OpenBonusDeposit_WithUserFirstDeposit",
+      "InfoMethodName": "OpenBonusDeposit_WithUserFirstDeposit"
+    }
+  ],
+  "ParentBonusAfterDeposit": [
+
+  ],
+  "Register": [
+    {
+      "Name": "RegisterBouns",
+      "Path": "Common/FullRegisterBouns.json",
+      "MethodName": "RegisterBouns",
+      "InfoMethodName": "RegisterBouns"
+    }
+  ],
+  "Keep": [
+    {
+      "Name": "RegisterBouns",
+      "Path": "Common/FullRegisterBouns.json",
+      "MethodName": "RegisterBouns",
+      "InfoMethodName": "RegisterBouns"
+    },
+    {
+      "Name": "BS001",
+      "Path": "BackendSend/BS001.json"
+    },
+    {
+      "Name": "BS002",
+      "Path": "BackendSend/BS002.json"
+    },
+    {
+      "Name": "BS003",
+      "Path": "BackendSend/BS003.json"
+    },
+    {
+      "Name": "BS004",
+      "Path": "BackendSend/BS004.json"
+    },
+    {
+      "Name": "BS005",
+      "Path": "BackendSend/BS005.json"
+    },
+    {
+      "Name": "BS006",
+      "Path": "BackendSend/BS006.json"
+    },
+    {
+      "Name": "BS007",
+      "Path": "BackendSend/BS007.json"
+    },
+    {
+      "Name": "Act003",
+      "Path": "2022_6/Act003.json"
+    },
+    {
+      "Name": "Act014",
+      "Path": "2022_12/Act014.json",
+      "MethodName": "OpenBonusDeposit_WithUserFirstDeposit",
+      "InfoMethodName": "OpenBonusDeposit_WithUserFirstDeposit"
+    },
+    {
+      "Name": "Act015",
+      "Path": "2023_1/Act015.json",
+      "MethodName": "OpenBonusDeposit_WithUserFirstDeposit",
+      "InfoMethodName": "OpenBonusDeposit_WithUserFirstDeposit"
+    },
+    {
+      "Name": "Act016",
+      "Path": "2023_2/Act016.json",
+      "MethodName": "OpenBonusDeposit_WithUserFirstDeposit",
+      "InfoMethodName": "OpenBonusDeposit_WithUserFirstDeposit"
+    }
+  ]
+}

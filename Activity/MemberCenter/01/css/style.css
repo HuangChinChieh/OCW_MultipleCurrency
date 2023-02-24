@@ -1,0 +1,497 @@
+﻿body {
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+}
+
+a:hover {
+    opacity: .8;
+}
+
+a {
+    cursor: pointer;
+}
+
+.btn {
+    width: 61.6%;
+    margin: 6.95vw auto;
+}
+
+header {
+    position: relative;
+}
+
+    header h1 {
+        position: absolute;
+        top: 2%;
+        left: 4%;
+        width: 9.37%;
+    }
+
+.place {
+    position: relative;
+}
+
+    .place h3 {
+        font-weight: bold;
+        font-size: 5.34vw;
+        position: absolute;
+        letter-spacing: -0.73vw;
+        top: 4%;
+        left: 27%;
+    }
+
+        .place h3 span {
+            letter-spacing: -2.83vw;
+            left: -5%;
+        }
+
+    .place p {
+        font-weight: bold;
+        font-size: 1.68vw;
+        position: absolute;
+        line-height: 2.5vw;
+        top: 13%;
+        left: 45%;
+    }
+
+    .place h4 {
+        font-weight: bold;
+        color: #006837;
+        font-size: 2.4vw;
+        position: absolute;
+        line-height: 3.8vw;
+    }
+
+        .place h4:nth-child(4) {
+            top: 38%;
+            left: 18%;
+        }
+
+        .place h4:nth-child(5) {
+            top: 45%;
+            left: 52%;
+        }
+
+        .place h4:nth-child(6) {
+            top: 55%;
+            left: 18%;
+        }
+
+        .place h4:nth-child(7) {
+            top: 68%;
+            left: 61%;
+        }
+
+        .place h4:nth-child(8) {
+            top: 80%;
+            left: 18%;
+        }
+
+    .place h5 {
+        font-weight: bold;
+        color: #939393;
+        font-size: 2.4vw;
+        position: absolute;
+        line-height: 3.8vw;
+        left: 50%;
+        bottom: 5%;
+        transform: translateX(-50%);
+    }
+
+.ansin {
+    position: relative;
+    padding-bottom: 25vw;
+}
+
+    .ansin h2 {
+        width: 58.46%;
+        margin: 7.3vw auto 0;
+    }
+
+    .ansin h3 {
+        font-weight: bold;
+        text-align: center;
+        font-size: 3.44vw;
+        line-height: 5vw;
+        margin: 6.15vw 0 4.76vw;
+    }
+
+    .ansin p {
+        font-size: 2.7vw;
+        line-height: 4.1vw;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .ansin h4 {
+        width: 56.6%;
+        position: absolute;
+        bottom: 0;
+        left: 35.5%;
+    }
+
+.voice {
+    position: relative;
+    background-image: url(../image/voice.png);
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 23%;
+    padding-bottom: 5%;
+}
+
+    .voice h1 {
+        position: absolute;
+        width: 96%;
+        left: 3%;
+        top: 5%;
+        text-align: center;
+        color: #FFFF00;
+        font-weight: bold;
+        font-size: 5.2vw;
+        -webkit-text-stroke: 0.14vw red;
+        text-shadow: 10px 10px 9px #0A0000;
+    }
+
+    .voice ul {
+        position: absolute;
+        width: 40.6%;
+        font-size: 1.46vw;
+        line-height: 2.56vw;
+        font-weight: bold;
+        top: 20.5%;
+        left: 40%;
+    }
+
+        .voice ul li {
+            margin-bottom: 28%;
+        }
+
+            .voice ul li:nth-child(3) {
+                margin-bottom: 40%;
+            }
+
+            .voice ul li h3 {
+                margin-bottom: 1.68vw;
+            }
+
+            .voice ul li p {
+                text-align: justify;
+            }
+
+.present {
+    position: relative;
+}
+
+    .present h1 {
+        position: absolute;
+        font-size: 6.6vw;
+        font-weight: bold;
+        top: 22%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .present div {
+        position: absolute;
+        font-weight: bold;
+        top: 36%;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+    }
+
+    .present h3 {
+        font-size: 3.44vw;
+        -webkit-text-stroke: 0.14vw red;
+        text-shadow: 10px 10px 9px #0A0000;
+    }
+
+        .present h3 span {
+            font-size: 4.17vw;
+        }
+
+    .present h4 {
+        font-size: 5.42vw;
+        -webkit-text-stroke: 0.14vw red;
+        text-shadow: 10px 10px 9px #0A0000;
+    }
+
+    .present .btn {
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+.footer {
+    position: relative;
+}
+
+    .footer h1 {
+        position: absolute;
+        font-weight: bold;
+        font-size: 3vw;
+        line-height: 4.6vw;
+        width: 100%;
+        text-align: center;
+        top: 22%;
+    }
+
+    .footer h3 {
+        position: absolute;
+        font-weight: bold;
+        font-size: 4.9vw;
+        line-height: 6.6vw;
+        width: 100%;
+        text-align: center;
+        top: 46%;
+    }
+
+    .footer .btn {
+        position: absolute;
+        bottom: -2%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+footer h3 {
+    width: 9.37%;
+    margin: 8.2vw auto 7.8vw;
+}
+
+@media(min-width:1200px) {
+    .place h3 {
+        font-size: 73px;
+        letter-spacing: -12px;
+    }
+
+        .place h3 span {
+            letter-spacing: -55px;
+            left: -12%;
+        }
+
+    .place p {
+        font-size: 23px;
+        line-height: 34px;
+    }
+
+    .place h4 {
+        font-size: 30px;
+        line-height: 53px;
+    }
+
+    .place h5 {
+        font-size: 30px;
+        line-height: 53px;
+    }
+
+    .ansin {
+        padding-bottom: 340px;
+    }
+
+        .ansin h2 {
+            margin: 100px auto 0;
+        }
+
+        .ansin h3 {
+            font-size: 47px;
+            line-height: 69px;
+            margin: 84px 0 63px;
+        }
+
+        .ansin p {
+            font-size: 37px;
+            line-height: 56px;
+        }
+
+    .voice h1 {
+        font-size: 71px;
+        -webkit-text-stroke: 2px red;
+        text-shadow: 10px 10px 9px #0A0000;
+    }
+
+    .voice ul {
+        font-size: 17px;
+        line-height: 34px;
+        top: 20%;
+    }
+
+        .voice ul li {
+            margin-bottom: 25%;
+        }
+
+            .voice ul li:nth-child(3) {
+                margin-bottom: 30%;
+            }
+
+
+            .voice ul li h3 {
+                margin-bottom: 25px;
+            }
+
+    .present h1 {
+        position: absolute;
+        font-size: 90px;
+    }
+
+
+    .present h3 {
+        font-size: 47px;
+        -webkit-text-stroke: 2px red;
+        text-shadow: 10px 10px 9px #0A0000;
+    }
+
+        .present h3 span {
+            font-size: 57px;
+        }
+
+    .present h4 {
+        font-size: 70px;
+    }
+
+    .footer h1 {
+        font-size: 36px;
+        line-height: 63px;
+    }
+
+    .footer h3 {
+        font-size: 68px;
+        line-height: 90px;
+    }
+}
+
+@media(max-width:570px) {
+    .voice ul {
+        line-height: 2.96vw;
+        top: 19%;
+        left: 40%;
+    }
+
+        .voice ul li {
+            margin-bottom: 16%;
+        }
+
+            .voice ul li:nth-child(3) {
+                margin-bottom: 25%;
+            }
+}
+
+@media(max-width:500px) {
+    .voice ul {
+        width: 50%;
+        line-height: 2.96vw;
+        top: 15%;
+        left: 34%;
+        transform: scale(.9);
+    }
+
+        .voice ul li {
+            margin-bottom: 28%;
+        }
+
+    .place p {
+        font-weight: bold;
+        font-size: 1.68vw;
+        position: absolute;
+        line-height: 15px;
+        top: 13%;
+        left: 37%;
+    }
+}
+
+@media(max-width:460px) {
+    .voice ul {
+        width: 61.6%;
+        line-height: 3.96vw;
+        top: 6%;
+        left: 27%;
+        transform: scale(.7);
+    }
+
+        .voice ul li {
+            margin-bottom: 26%;
+        }
+}
+
+@media(max-width:405px) {
+
+
+    .voice ul li {
+        margin-bottom: 22%;
+    }
+
+        .voice ul li:nth-child(3) {
+            margin-bottom: 31%;
+        }
+}
+
+@media(max-width:375px) {
+
+    .voice ul {
+        top: 5%;
+    }
+
+        .voice ul li {
+            margin-bottom: 26%;
+        }
+
+            .voice ul li:nth-child(3) {
+                margin-bottom: 26%;
+            }
+}
+
+@media(max-width:345px) {
+
+    .voice ul {
+        top: 3%;
+    }
+
+        .voice ul li {
+            margin-bottom: 23%;
+        }
+
+            .voice ul li:nth-child(3) {
+                margin-bottom: 25%;
+            }
+}
+
+@media(max-width:335px) {
+    .voice ul {
+        top: 4%;
+    }
+
+        .voice ul li {
+            margin-bottom: 20%;
+        }
+
+            .voice ul li:nth-child(3) {
+                margin-bottom: 25%;
+            }
+}
+
+
+/* 2022-02-27 kuronus add */
+
+.voice_container {
+    background-color: rgba(255,255,255,0.6);
+    width: 88%;
+    padding: 2% 4% 0% 4%;
+    margin: 0px auto;
+    /*
+	position		: absolute;
+	top				: 12%;
+	left			: 6%;
+*/
+}
+
+.voice_block {
+    background-color: rgba(255,255,255,0.6);
+    border: 2px solid #976357;
+    padding: 4%;
+    font-size: min(3.3vw, 21px);
+}

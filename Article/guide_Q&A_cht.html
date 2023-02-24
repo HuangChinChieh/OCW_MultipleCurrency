@@ -1,0 +1,1310 @@
+﻿
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title></title>
+    <meta name='robots' content='max-image-preview:large' />
+    <link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+    <!--<link rel="preload" href="https://img.japanesecasino.com/themes/sunrise2/japan-dark-bg-mobile.jpg" as="image">-->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel='stylesheet' id='wp-block-library-css' href='CSS/StyleSheet.css' media='all' />
+    <link rel='stylesheet' id='bootstrap-style-css' href='CSS/StyleSheet2.css' media='all' />
+    <link rel="stylesheet" href="CSS/layout.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="CSS/QaStyle.css">
+    <link href="../css/footer-new.css" rel="stylesheet" />
+    <!--<script defer src='https://www.japanesecasino.com/wp-content/themes/sunrise2/js/components/loadMorePosts.js?ver=5.7.2' id='sunrise2-loadMorePosts-js'></script>-->
+    <link rel="canonical" href="Guide.html" />
+    <meta name="description" content="カジノの情報全てが一箇所にまとまっていて簡単に見られるところはないか？まさに、ジャパニーズカジノのカジノガイドページがお探しのページです！カジノ用語、ゲーム、ルール、ボーナス、ランドベースカジノを始めとした様々な情報がここで見つかります。" />
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M38QK3D');
+    </script>
+    <link rel="icon" href="https://www.japanesecasino.com/wp-content/uploads/cropped-japanesecasino.com-favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://www.japanesecasino.com/wp-content/uploads/cropped-japanesecasino.com-favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://www.japanesecasino.com/wp-content/uploads/cropped-japanesecasino.com-favicon-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://www.japanesecasino.com/wp-content/uploads/cropped-japanesecasino.com-favicon-270x270.png" />
+
+    <script type="module">
+        /**
+* Script to toggle and enable search
+*/
+        if (self != top) {
+            window.parent.API_LoadingStart();
+        }
+
+        (function () {
+
+            document.addEventListener("DOMContentLoaded", init);
+
+            /**
+             * Initiate script
+             */
+            function init() {
+                window.parent.API_LoadingEnd();
+                //if (document.URL.includes('WithdrawQ&A')) {
+                //    $('#nav-PopularArticles-tab').trigger("click");
+                //    $('#withdrawQA').trigger("click");
+                //    var href = $('#withdrawQA').attr('href');
+                //    href = "guide_Rolling.html"
+                //    window.location.href = href;
+                //}
+              
+                var search_toggler = document.getElementById("search_toggler");
+
+                if (!search_toggler) return;
+
+                search_toggler.addEventListener("click", function () {
+                    var icon = this.children[0];
+                    var form = document.getElementById('search_form');
+                    if (icon.classList.contains('fa-search')) {
+                        icon.classList.remove('fa-search'); icon.classList.add('fa-times');
+                        form.querySelector('.search-input-field').classList.add('show');
+                        setTimeout(function () { form.querySelector('.search-input-field').focus(); }, 10);
+                    } else {
+                        icon.classList.remove('fa-times'); icon.classList.add('fa-search');
+                        form.querySelector('.search-input-field').classList.remove('show');
+                    }
+                }, false);
+            }
+
+        })();        /**
+         * Script to show more elements
+         */
+        (function () {
+
+            // Elements
+            var elems = [];
+
+            // Run
+            document.addEventListener("DOMContentLoaded", init);
+
+            /**
+             * Initiate script
+             */
+            function init() {
+                window.parent.API_LoadingEnd();
+
+                elems['buttons'] = document.getElementsByClassName("showmore");
+
+                // No buttons found
+                if (elems['buttons'].length === 0) return;
+
+                Array.prototype.forEach.call(elems['buttons'], function (el) {
+                    // Find the target parent
+                    var target = el.getAttribute('data-target');
+
+                    // No target found
+                    if (target == null) return;
+
+                    // Add listeners
+                    el.addEventListener("click", showMore);
+                });
+            }
+
+            /**
+             * Show more elements
+             */
+            function showMore() {
+                // Hidden elements within target container
+                var target = event.target.getAttribute('data-target');
+                var hidden = document.getElementById(target).getElementsByClassName('hidden');
+
+                // No hidden elements found
+                if (hidden == null || target == null) return;
+
+                // Count number of
+                var length = hidden.length;
+                var offset = (event.target.getAttribute('data-offset') == null ? length : event.target.getAttribute('data-offset'));
+
+                // Loop through the hidden elements
+                var count = 0;
+                while (hidden.length && (count < offset)) {
+                    hidden[0].classList.remove('hidden');
+                    length--;
+                    count++;
+                }
+
+                // No hidden elements left
+                if (length == 0) {
+                    event.target.classList.add('d-none');
+                    event.target.removeEventListener('click', showMore);
+                    return;
+                }
+            }
+
+        })();                            /**
+         * Script for activating the sticky-element
+         */
+        (function () {
+
+            // Elements
+            var elems = [];
+
+            // Bools
+            var error = false;
+            var passiveSupport = false;
+
+            // Ints
+            var targetTop;
+            var windowHeight;
+            var windowWidth;
+            var tocBtnText;
+
+            // Run
+            document.addEventListener("DOMContentLoaded", init);
+
+            function init() {
+                window.parent.API_LoadingEnd();
+
+                elems['sticky'] = document.getElementById("sticky");
+                elems['breakpoint'] = document.getElementById("stickyBreakpoint");
+                elems['navbar'] = document.getElementById("navbar");
+
+                // Check that all required elements is in place
+                Object.keys(elems).forEach(function (key) {
+                    if (elems[key] === null) {
+                        //console.log( key + ' is missing.' );
+                        error = true;
+                    }
+                });
+
+                // Required element(s) missing, abort
+                if (error === true) return;
+
+                targetTop = elems['navbar'].offsetHeight;
+                windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+                windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+
+                elems['sticky'].style.top = targetTop + 'px';
+
+                window.addEventListener('resize', function () {
+                    targetTop = elems['navbar'].offsetHeight;
+                    elems['sticky'].style.top = targetTop + 'px';
+                }, false);
+
+                window.addEventListener('orientationchange', function () {
+                    targetTop = elems['navbar'].offsetHeight;
+                    elems['sticky'].style.top = targetTop + 'px';
+                }, false);
+
+                // Check if #sticky contains tracked elements
+                elems['anchors'] = elems['sticky'].getElementsByClassName("anchor");
+                elems['toc_dropdown_btn'] = document.getElementById("toc_dropdown_btn");
+
+                // Tracked elements found, add listeners
+                if (elems['anchors'] !== null && elems['toc_dropdown_btn'] !== null) {
+
+                    tocBtnText = elems['toc_dropdown_btn'].innerHTML;
+
+                    Array.prototype.forEach.call(elems['anchors'], function (el) {
+                        el.addEventListener("click", trackAnchorsByClick);
+                    });
+
+                    document.addEventListener("scroll", trackAnchorsByScroll, passiveSupport ? { passive: true } : false);
+                }
+
+                // Add listeners
+                checkPassiveSupport();
+                window.addEventListener("scroll", sticky, passiveSupport ? { passive: true } : false);
+
+            }
+
+            /**
+             * Check if the browser supports passive listeners
+             */
+            function checkPassiveSupport() {
+
+                try {
+                    var options = {
+                        get passive() {
+                            passiveSupport = true;
+                        }
+                    };
+
+                    window.addEventListener("test", options, options);
+                    window.removeEventListener("test", options, options);
+                } catch (err) {
+                    passiveSupport = false;
+                }
+            }
+
+            /**
+             * Sticky
+             */
+            function sticky() {
+
+                // Get the breakpoint element's position
+                var breakpoint_rect = elems['breakpoint'].getBoundingClientRect();
+
+                // Get sticky, or not
+                if (isInViewport(breakpoint_rect) || isBelowViewport(breakpoint_rect)) {
+                    elems['sticky'].classList.remove("show");
+
+                    if (tocBtnText != null) elems['toc_dropdown_btn'].innerHTML = tocBtnText;
+
+                } else {
+                    elems['sticky'].classList.add("show");
+                }
+            }
+
+            /**
+             * Check if the element is below the viewport
+             */
+            function isInViewport(rect) {
+
+                var vertInView = ((rect.top - targetTop) <= windowHeight) && (((rect.top - targetTop) + rect.height) >= 0);
+                return (vertInView);
+            }
+
+            /**
+             * Check if the element is below the viewport
+             */
+            function isBelowViewport(rect) {
+                if (rect.top >= windowHeight) return true;
+            }
+
+            /**
+             * Set the active anchor by click
+             */
+            function trackAnchorsByClick() {
+
+                // Remove listener by scroll, to avoid conflicts
+                document.removeEventListener("scroll", trackAnchorsByScroll, passiveSupport ? { passive: true } : false);
+
+                // Do have an active anchor set?
+                if (elems['active_anchor'] !== undefined) {
+                    elems['active_anchor'].classList.remove("txt-mid-blue");
+                }
+
+                // Set the active anchor
+                elems['active_anchor'] = event.target;
+                event.target.classList.add("txt-mid-blue");
+                elems['toc_dropdown_btn'].innerHTML = elems['active_anchor'].innerHTML;
+
+                // Re-add listener
+                document.addEventListener("scroll", trackAnchorsByScroll, passiveSupport ? { passive: true } : false);
+            }
+
+            /**
+             * Set the active anchor by scroll
+             */
+            function trackAnchorsByScroll() {
+
+                Array.prototype.forEach.call(elems['anchors'], function (el) {
+
+                    // Remove the hashtag to get a clean id
+                    var target = document.getElementById(el.getAttribute("href").substring(1));
+
+                    // Get the target element's position
+                    var target_rect = target.getBoundingClientRect();
+
+                    // Is the heading in the viewport?
+                    if (isInViewport(target_rect)) {
+
+                        // Do have an active anchor set?
+                        if (elems['active_anchor'] !== undefined) {
+                            elems['active_anchor'].classList.remove("txt-mid-blue");
+                        }
+
+                        // Set the active anchor
+                        elems['active_anchor'] = el;
+                        elems['toc_dropdown_btn'].innerHTML = elems['active_anchor'].innerHTML;
+                        el.classList.add("txt-mid-blue");
+                    }
+
+                });
+            }
+
+        })();</script>
+</head>
+<body class="onlinecasinoworld-com">
+    <div class="site-content article__subPage">
+
+
+        <main class="article__subPageContent" style=" background: rgba(0,0,0, 0);">
+            <div class="bg-neutral-dark px-2 px-lg-0">
+                <div class="container text-center one-column pt-5 pb-3 intro">
+                    <h1 class="mt-lg-3 mb-0 language_replace">您好！</h1>
+                    <p class="lead mt-3 mb-3 language_replace">請問有什麼疑問嗎？</p>
+                </div>
+                <div class="container pb-5">
+                </div>
+            </div>
+            <!-- Q&A 內容 ================ -->
+            <article class="hotarticle_area container mx-auto one-column py-4 py-lg-5" style="padding-bottom:0px !important">
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col justify-content-center" style="margin: 0 auto;">
+
+                            <!--tabs-->
+
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+                                    <button class="nav-link col language_replace active" id="nav-information-tab" data-toggle="tab" data-target="#nav-information" type="button" role="tab" aria-controls="nav-information" aria-selected="true" style="background: none;">帳戶資訊</button>
+
+                                    <button class="nav-link col language_replace" id="nav-saving-tab" data-toggle="tab" data-target="#nav-saving" type="button" role="tab" aria-controls="nav-saving" aria-selected="false" style="background: none;">存款</button>
+
+                                    <button class="nav-link col language_replace" id="nav-collection-tab" data-toggle="tab" data-target="#nav-collection" type="button" role="tab" aria-controls="nav-collection" aria-selected="false" style="background: none;">取款</button>
+
+                                    <button class="nav-link col language_replace" id="nav-bouns-tab" data-toggle="tab" data-target="#nav-bouns" type="button" role="tab" aria-controls="nav-bouns" aria-selected="false" style="background: none;">獎金與禮金</button>
+
+                                    <button class="nav-link col" id="nav-game-tab" data-toggle="tab" data-target="#nav-game" type="button" role="tab" aria-controls="nav-game" aria-selected="false" style="background: none;">遊戲</button>
+
+                                    <button class="nav-link col language_replace" id="nav-other-tab" data-toggle="tab" data-target="#nav-other" type="button" role="tab" aria-controls="nav-other" aria-selected="false" style="background: none;">其他</button>
+                                    <button class="nav-link col language_replace" id="nav-PopularArticles-tab" data-toggle="tab" data-target="#nav-PopularArticles" type="button" role="tab" aria-controls="nav-PopularArticles" aria-selected="false" style="background: none;">人氣記事</button>
+                                </div>
+                            </nav>
+
+                            <div class="tab-content" id="nav-tabContent">
+
+                                <div class="tab-pane fade show active" id="nav-information" role="tabpanel" aria-labelledby="nav-information-tab">
+                                    <!--001アカウント情報-->
+                                    <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading001">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse001" aria-expanded="false" aria-controls="flush-collapse001">
+                                                    我想改姓名、出生年月日、電話號碼等帳號資料，請問該怎麼辦？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse001" class="accordion-collapse collapse" aria-labelledby="flush-heading001" data-parent="#accordionFlushExample">
+                                                <div class="accordion-body language_replace">需要修改帳號資訊的話請聯繫客服人員。</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading002">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse002" aria-expanded="false" aria-controls="flush-collapse002">
+                                                    什麼時候需要帳號認證？該怎麼認證？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse002" class="accordion-collapse collapse" aria-labelledby="flush-heading002" data-parent="#accordionFlushExample">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">使用完整會員限定的存取款與領獎中心等功能就需要帳號認證。</p>
+                                                    <p class="language_replace">您可以隨時自「會員中心」按下「認證」，依照指示完成認證。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading003">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse003" aria-expanded="false" aria-controls="flush-collapse003">
+                                                    請問有年齡限制嗎？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse003" class="accordion-collapse collapse" aria-labelledby="flush-heading003" data-parent="#accordionFlushExample">
+                                                <div class="accordion-body language_replace">必須年滿20歲才能夠使用Maharaja。</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading004">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse004" aria-expanded="false" aria-controls="flush-collapse004">
+                                                    可以建立幾個帳號？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse004" class="accordion-collapse collapse" aria-labelledby="flush-heading004" data-parent="#accordionFlushExample">
+                                                <div class="accordion-body language_replace">為避免非法使用，禁止重複註冊帳號。</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading005">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse005" aria-expanded="false" aria-controls="flush-collapse005">
+                                                    要如何創建帳號呢？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse005" class="accordion-collapse collapse" aria-labelledby="flush-heading005" data-parent="#accordionFlushExample">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">在創建新帳號中輸入email地址，按下發送驗證碼按鈕，驗證碼便會發送至您輸入的email。</p>
+                                                    <p class="language_replace">輸入驗證碼、暱稱、密碼即可完成簡易註冊。</p>
+                                                    <p class="language_replace">若您要使用完整會員限定的存取款與領獎中心功能，請至「會員中心」依照指示完成帳號認證成為完整會員。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading006">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse006" aria-expanded="false" aria-controls="flush-collapse006">
+                                                    想刪除帳號該怎麼做？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse006" class="accordion-collapse collapse" aria-labelledby="flush-heading006" data-parent="#accordionFlushExample">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">Maharaja為避免重複註冊帳號，不會取消會員／刪除帳號，而是採取封號／凍結帳號的方式處理。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading007">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse007" aria-expanded="false" aria-controls="flush-collapse007">
+                                                    我忘記密碼了，請問該怎麼辦？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse007" class="accordion-collapse collapse" aria-labelledby="flush-heading007" data-parent="#accordionFlushExample">
+                                                <div class="accordion-body language_replace">忘記密碼時，請於登入畫面點擊忘記密碼，重新設定。</div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <!--001アカウント情報 end-->
+                                </div>
+
+                                <div class="tab-pane fade" id="nav-saving" role="tabpanel" aria-labelledby="nav-saving-tab">
+
+                                    <!--002入金-->
+                                    <div class="accordion accordion-flush" id="accordionFlushExample2">
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading008">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse008" aria-expanded="false" aria-controls="flush-collapse008">
+                                                    請問有那些存款方式？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse008" class="accordion-collapse collapse" aria-labelledby="flush-heading008" data-parent="#accordionFlushExample2">
+                                                <div class="accordion-body">
+                                                    <p class="language_replace">
+                                                        目前可使用信用卡支付（透過 Paypal）、銀行匯款、TigerPay 及加密貨幣 USDT(ERC)。
+                                                    </p>
+                                                    <p class="language_replace">
+                                                        TigerPay 使用導覽
+                                                    </p>
+                                                    <p class="language_replace">
+                                                        <a style="color: blue;" onclick="window.open('https://twitter.com/tigerpay_guide')">https://twitter.com/tigerpay_guide</a>
+                                                    </p>
+                                                    <p class="language_replace">未來會增加各種存款及取款方式。若您有希望的存取款方式的話也歡迎與客服聯絡。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading009">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse009" aria-expanded="false" aria-controls="flush-collapse009">
+                                                    有支援虛擬貨幣存款嗎？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse009" class="accordion-collapse collapse" aria-labelledby="flush-heading009" data-parent="#accordionFlushExample2">
+                                                <div class="accordion-body language_replace">
+                                                    我們支援 USDT(ERC)
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading010">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse010" aria-expanded="false" aria-controls="flush-collapse010">
+                                                    我想初次存款，請問初次存款有什麼獎勵嗎？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse010" class="accordion-collapse collapse" aria-labelledby="flush-heading010" data-parent="#accordionFlushExample2">
+                                                <div class="accordion-body language_replace">存款後，依據您的存款方式，可以在領獎中心領取對應的獎金或禮金。每個月活動不同，詳細資訊請見「活動中心」。</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading011">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse011" aria-expanded="false" aria-controls="flush-collapse011">
+                                                    請問最低存款額度是多少？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse011" class="accordion-collapse collapse" aria-labelledby="flush-heading011" data-parent="#accordionFlushExample2">
+                                                <div class="accordion-body language_replace">Paypal 最低金額500日圓，銀行匯款2000日圓，加密貨幣為10000日圓。</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading012">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse012" aria-expanded="false" aria-controls="flush-collapse012">
+                                                    請告訴我存款限額。
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse012" class="accordion-collapse collapse" aria-labelledby="flush-heading012" data-parent="#accordionFlushExample2">
+                                                <div class="accordion-body language_replace">銀行匯款一天最多50萬日圓。其他存款方式則無限制。</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading013">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse013" aria-expanded="false" aria-controls="flush-collapse013">
+                                                    哪裡可以確認帳戶餘額？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse013" class="accordion-collapse collapse" aria-labelledby="flush-heading013" data-parent="#accordionFlushExample2">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">帳號的餘額顯示於右上方。</p>
+                                                    <p class="language_replace">另外，也可從功能表列的會員中心頁面確認。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading014">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse014" aria-expanded="false" aria-controls="flush-collapse014">
+                                                    存款沒入帳。
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse014" class="accordion-collapse collapse" aria-labelledby="flush-heading014" data-parent="#accordionFlushExample2">
+                                                <div class="accordion-body language_replace">官方LINE客服能夠幫您確認，請附上存款紀錄和明細等詢問。</div>
+                                            </div>
+                                        </div>
+
+                                        <!--002入金 end-->
+                                    </div>
+                                </div>
+
+
+                                <div class="tab-pane fade" id="nav-collection" role="tabpanel" aria-labelledby="nav-collection-tab">
+                                    <div class="accordion accordion-flush" id="accordionFlushExample3">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading016">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse016" aria-expanded="false" aria-controls="flush-collapse016">
+                                                    取款時需要審查嗎？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse016" class="accordion-collapse collapse" aria-labelledby="flush-heading016" data-parent="#accordionFlushExample3">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">基於執照的規定，2022年10月19日起，取款需要附上身分證明（KYC）以確認您為本人。</p>
+                                                    <p class="language_replace">實名制認證證件（含人像照片）</p>
+                                                    <p class="language_replace">-駕駛執照／駕駛經歷證明書</p>
+                                                    <p class="language_replace">-附照片之住民基本台帳卡</p>
+                                                    <p class="language_replace">-護照</p>
+                                                    <p class="language_replace">-個人編號卡</p>
+                                                    <p class="language_replace">-居留證或特別永住者證明書</p>
+                                                    <p class="language_replace">以上文件至少需要提供其中一項。護照請提交帶有照片的頁面。其他文件則需提供證件的正反面。</p>
+                                                    <p class="language_replace">為使審查過程更加順暢，請務必於標題或mail內容註明Maharaja的帳號資訊（mail、電話號碼），與上列證件共同寄送至以下信箱。</p>
+                                                    <p class="language_replace">客服信箱：service@casino-maharaja.com</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--003出金-->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading015">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse015" aria-expanded="false" aria-controls="flush-collapse015">
+                                                    請問取款要花多少時間？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse015" class="accordion-collapse collapse" aria-labelledby="flush-heading015" data-parent="#accordionFlushExample3">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">取款前需要完成帳號認證與實名制認證。</p>
+                                                    <p class="language_replace">完成帳號認證與實名制認證的前提下，我們會盡力在申請取款後，基本上約15分鐘以內處理完成。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading040">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-heading040" aria-expanded="false" aria-controls="flush-heading040">
+                                                    請問有什麼取款方式？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-heading040" class="accordion-collapse collapse" aria-labelledby="flush-heading040" data-parent="#accordionFlushExample3">
+                                                <div class="accordion-body">
+                                                    <p class="language_replace">
+                                                        取款方式提供銀行匯款與各種加密貨幣資產(BTC・ETH・USDT・USDC・XRP・HLN)。
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading017">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse017" aria-expanded="false" aria-controls="flush-collapse017">
+                                                    獎金和禮金能取款嗎？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse017" class="accordion-collapse collapse" aria-labelledby="flush-heading017" data-parent="#accordionFlushExample3">
+                                                <div class="accordion-body language_replace">獎金和禮金根據不同活動內容設有取款門檻，投注達成該取款門檻即可取款。</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading018">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse018" aria-expanded="false" aria-controls="flush-collapse018">
+                                                    請問能夠以虛擬貨幣存取款嗎？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse018" class="accordion-collapse collapse" aria-labelledby="flush-heading018" data-parent="#accordionFlushExample3">
+                                                <div class="accordion-body language_replace">目前暫不提供虛擬貨幣取款。</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading019">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse019" aria-expanded="false" aria-controls="flush-collapse019">
+                                                    取款需要手續費嗎？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse019" class="accordion-collapse collapse" aria-labelledby="flush-heading019" data-parent="#accordionFlushExample3">
+                                                <div class="accordion-body language_replace">取款手續費銀行匯款是3％+175 ocoin，提取加密貨幣則收燃料費。</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading020">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse020" aria-expanded="false" aria-controls="flush-collapse020">
+                                                    請問能提早幫我出款嗎？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse020" class="accordion-collapse collapse" aria-labelledby="flush-heading020" data-parent="#accordionFlushExample3">
+                                                <div class="accordion-body language_replace">不能，我們是按照取款申請的順序執行。</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading021">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse021" aria-expanded="false" aria-controls="flush-collapse021">
+                                                    能夠取消取款嗎？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse021" class="accordion-collapse collapse" aria-labelledby="flush-heading021" data-parent="#accordionFlushExample3">
+                                                <div class="accordion-body language_replace">可以，請詢問官方LINE客服。我們會確認目前的狀況，再給您回覆。</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading022">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse022" aria-expanded="false" aria-controls="flush-collapse022">
+                                                    請告訴我取款限額。
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse022" class="accordion-collapse collapse" aria-labelledby="flush-heading022" data-parent="#accordionFlushExample3">
+                                                <div class="accordion-body language_replace">最少可取款1萬Ocoin，燃料費另計。銀行匯款最少5500 ocoin。</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading024">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse024" aria-expanded="false" aria-controls="flush-collapse024">
+                                                    取款未到帳。
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse024" class="accordion-collapse collapse" aria-labelledby="flush-heading024" data-parent="#accordionFlushExample3">
+                                                <div class="accordion-body language_replace">官方LINE客服會確認，請向客服諮詢。</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading024">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse025" aria-expanded="false" aria-controls="flush-collapse025">
+                                                    能夠解取款門檻嗎？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse025" class="accordion-collapse collapse" aria-labelledby="flush-heading025" data-parent="#accordionFlushExample3">
+                                                <div class="accordion-body language_replace">原有的取款門檻在Ocoin為100以下時入金，或是在領獎中心領取Ocoin後便會解除。</div>
+                                            </div>
+                                        </div>
+
+                                        <!--003出金 end-->
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="nav-bouns" role="tabpanel" aria-labelledby="nav-bouns-tab">
+                                    <div class="accordion accordion-flush" id="accordionFlushExample4">
+                                        <!--004ボーナス-->
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading025">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse025" aria-expanded="false" aria-controls="flush-collapse025">
+                                                    獎金跟禮金有什麼不同？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse025" class="accordion-collapse collapse" aria-labelledby="flush-heading025" data-parent="#accordionFlushExample4">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">
+                                                        獎金必須OCoin餘額100以下方可領取，且一次僅能領取一筆。
+                                                        <!-- <span class="language_replace text-link" onclick="window.parent.API_LoadPage('Prize','/Guide/prize.html', true)">受取箱の説明<i class="icon icon-mask icon-question"></i></span> -->
+                                                    </p>
+                                                    <p class="language_replace">
+                                                        禮金沒有領取限制，可隨時領取。
+
+                                                    </p><a class="language_replace text-link text-primary"  onclick="window.parent.API_LoadPage('QA','/Guide/prize.html?form=QA')">領獎中心說明<i class="icon icon-mask icon-question"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading036">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse036" aria-expanded="false" aria-controls="flush-collapse036">
+                                                    在使用獎金上有沒有什麼限制？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse036" class="accordion-collapse collapse" aria-labelledby="flush-heading036" data-parent="#accordionFlushExample4">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">
+                                                        使用獎金時必須遵守「獎金使用規定」。
+                                                    </p>
+                                                    <p class="language_replace">【獎金使用規定】</p>
+                                                    <p class="language_replace">1.未達成取款門檻前存款或取款將沒收獎金。</p>
+                                                    <p class="language_replace">2.禁止使用獎金的遊戲： </p>
+                                                    <p class="language_replace">刮刮樂、獎金累積型彩池遊戲、有累積機制的老虎機、骰寶、意式百家樂（プントバンコ）、吸血男爵、吸血男爵Ⅱ、亡命對決 2、亡命對決、迷你輪盤、基諾快樂彩、電子21點、體育、Ysport大相撲</p>
+                                                    <p class="language_replace">3.獎金一次僅能使用一筆。</p>
+                                                    <p class="language_replace">4.以下行為判定為不正當使用Bonus，將視情況回收勝利獎金或封鎖帳號。</p>
+                                                    <p class="language_replace">‧等值下法、零風險下法、低利潤下法</p>
+                                                    <p class="language_replace">‧使用軟體、濫用漏洞、其他技術上的非法行為或有意地從事任何其他非法行為</p>
+                                                    <p class="language_replace">‧在同一投注場合內，玩家個人或團體無視投注結果以最終得利為目的，連續進行明顯矛盾的下注之行為（如數個玩家對賭、打水）</p>
+                                                    <p class="language_replace">‧對沖投注</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--004ボーナス end-->
+                                    </div>
+                                </div>
+
+                        <div class="tab-pane fade" id="nav-game" role="tabpanel" aria-labelledby="nav-game-tab">
+                            <div class="accordion accordion-flush" id="accordionFlushExample5">
+                                <!--034ゲーム 20220817 update-->
+
+                                <div class="accordion-item">
+                                    <a href="guide-TripleCrown_CHT.html" target="_self">
+                                    <h2 class="accordion-header QA-style">
+                                        <button class="collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button">
+                                            什麼是三冠王遊戲？
+                                        </button>
+                                    </h2>
+                                </a>
+                                </div>
+                                
+                                <!--005ゲーム-->
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading026">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse026" aria-expanded="false" aria-controls="flush-collapse026">
+                                                    遊戲出現問題，請問該怎麼辦？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse026" class="accordion-collapse collapse" aria-labelledby="flush-heading026" data-parent="#accordionFlushExample5">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">遇到不能玩的遊戲時，請嘗試按照以下步驟操作：</p>
+                                                    <p class="language_replace">1.請從瀏覽器中清緩存及刪除Cookies的歷史紀錄。</p>
+                                                    <p class="" style="color: red;">*依照瀏覽器種類及版本不同會有不同的刪除方式，請注意。</p>
+                                                    <p class="language_replace">2.按下登出鍵，登出Casino Maharaja網站。</p>
+                                                    <p class="language_replace">3.再次登入Casino Maharaja</p>
+                                                    <p class="language_replace">4.再次登入同遊戲嘗試看看。</p>
+                                                    <p class="language_replace">若以上步驟還是無法解決問題的話，</p>
+                                                    <p class="language_replace">請提供截圖和官方LINE客服聯絡。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading027">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse027" aria-expanded="false" aria-controls="flush-collapse027">
+                                                    遊戲中途停止的話該怎麼辦？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse027" class="accordion-collapse collapse" aria-labelledby="flush-heading027" data-parent="#accordionFlushExample5">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">遊戲中途停止的話，首先請將該畫面截圖。</p>
+
+                                                    <p class="language_replace">獎勵關或免費旋轉時若遇遊戲中斷的情況，基本上無法回到獎勵關上，但被認可的投注結果會記錄在系統上，自動反應在玩家的帳戶。</p>
+                                                    <p class="language_replace">若獎金未反應在您的帳戶，煩請手動登出，删除緩存及 Cookie 的歷史紀錄，再嘗試登入同一個遊戲。</p>
+
+                                                    <p class="" style="color: red;">※停止的遊戲如無法確認遊戲紀錄，沒有顯示勝利獎金的話，遊戲供應商會調查，屆時再麻煩您將「錯誤訊息的截圖畫面」傳給我們。</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading028">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse028" aria-expanded="false" aria-controls="flush-collapse028">
+                                                    我獲得獎勵轉數卻沒有開始，該怎麼辦才好？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse028" class="accordion-collapse collapse" aria-labelledby="flush-heading028" data-parent="#accordionFlushExample5">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">請手動登出網站，並從瀏覽器清除緩存和刪除Cookie歷史紀錄。</p>
+                                                    <p class="language_replace">此外，請嘗試使用像是Google Chrome的其它瀏覽器。</p>
+                                                    <p class="language_replace">若仍然有問題，再麻煩將錯誤畫面截圖提供給官方LINE客服。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading029">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse029" aria-expanded="false" aria-controls="flush-collapse029">
+                                                    我沒有獲得勝利獎金，請問該怎麼辦？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse029" class="accordion-collapse collapse" aria-labelledby="flush-heading029" data-parent="#accordionFlushExample5">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">若您認為沒有收到獎金的話，首先請確認遊戲歷史紀錄。</p>
+
+                                                    <p class="" style="color: red;">※遇到這種情況的處理方式，請確認以下步驟，絕大多數都可以改善您的問題，請務必試試看。</p>
+
+                                                    <p class="language_replace">登出後，再次登入</p>
+                                                    <p class="language_replace">確認您使用的裝置系統瀏覽器已更新至最新版本</p>
+                                                    <p class="language_replace">刪除瀏覽器的緩存、Cookies的歷史紀錄</p>
+                                                    <p class="language_replace">更換瀏覽器 (Google Chrome, Firefox等)</p>
+                                                    <p class="language_replace">然後，重新啟動瀏覽器再重試</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading030">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse030" aria-expanded="false" aria-controls="flush-collapse030 language_replace">
+                                                    什麼是RTP？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse030" class="accordion-collapse collapse" aria-labelledby="flush-heading030" data-parent="#accordionFlushExample5">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">RTP是英文Return to Player的略稱，是給玩家的回報率，也就是指遊戲理論上的支付率。</p>
+                                                    <p class="language_replace" style="color: red;">※※並不是針對個別玩家的勝率，而是對所有該遊戲玩家的數字。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--005ゲーム end-->
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab">
+                                    <div class="accordion accordion-flush" id="accordionFlushExample6">
+                                        <!--006その他-->
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading031">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse031" aria-expanded="false" aria-controls="flush-collapse031 language_replace">
+                                                    「緩存」是什麼？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse031" class="accordion-collapse collapse" aria-labelledby="flush-heading031" data-parent="#accordionFlushExample6">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">「所謂「緩存」是將Internet Explorer等瀏覽器上顯示的網頁內容，暫時儲存於電腦內的功能。</p>
+                                                    <p class="language_replace">當您要再次訪問相同頁面時，不需透過網路上的資料、僅需透過查看儲存於緩存中的資料就能夠快速瀏覽頁面</p>
+                                                    <p class="language_replace">當您遇到「更新網頁也不會顯示最新資訊」「變更設定也不會顯示」等問題時，它並不是最新的資訊，可能是電腦儲存到以前的資料。遇到這種情況，清除緩存或許能解決問題。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading032">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse032" aria-expanded="false" aria-controls="flush-collapse032 language_replace">
+                                                    收不到驗證碼
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse032" class="accordion-collapse collapse" aria-labelledby="flush-heading032" data-parent="#accordionFlushExample6">
+                                                <div class="accordion-body language_replace">有可能您輸入的電話或mail與註冊時不同，或是您的裝置設定拒收。</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading033">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse033" aria-expanded="false" aria-controls="flush-collapse033 language_replace">
+                                                    Cookie是什麼？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse033" class="accordion-collapse collapse" aria-labelledby="flush-heading033" data-parent="#accordionFlushExample6">
+                                                <div class="accordion-body language_replace">
+                                                    所謂Cookie就是網路伺服器傳送到用戶的網路瀏覽器時，用於儲存用戶端數據時產生的資料夾。
+                                                    允許後，會儲存於用戶瀏覽器中一段時間，以便日後可順利造訪。
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading034">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse034" aria-expanded="false" aria-controls="flush-collapse034 language_replace">
+                                                    請問有固定的維護時間嗎？
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse034" class="accordion-collapse collapse" aria-labelledby="flush-heading034" data-parent="#accordionFlushExample6">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">Maharaja的固定維護時間：　</p>
+                                                    <p class="language_replace">每周一的11：00至13：00</p>
+                                                    <p class="language_replace">若沒有維修的話不會另行通知。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header QA-style" id="flush-heading035">
+                                                <button class="accordion-button collapsed d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100 language_replace" type="button" data-toggle="collapse" data-target="#flush-collapse035" aria-expanded="false" aria-controls="flush-collapse035 language_replace">
+                                                    被防護軟體封鎖無法造訪網站。
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse035" class="accordion-collapse collapse" aria-labelledby="flush-heading035" data-parent="#accordionFlushExample6">
+                                                <div class="accordion-body language_replace">
+                                                    <p class="language_replace">博弈網站會經過數個VPN讓防毒軟體無法探知位置，因此會被判斷為惡質網站。</p>
+                                                    <p class="language_replace">Google的「Google安全瀏覽網站」判斷弊站為安全網站，沒有特別的問題，所以請繼續享受Maharaja。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--006その他 end-->
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="nav-PopularArticles" role="tabpanel" aria-labelledby="nav-PopularArticles-tab">
+                                    <div class="accordion accordion-flush" id="">
+                                        <a href="guide_strengths_CHT.html"
+                                           class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100" rel="noopener">
+                                            <div class="px-2 pr-3 flex-fill overflow-hidden">
+                                                <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">Maharaja的強項！</h3>
+                                            </div>
+                                            <i class="fas fa-chevron-right txt-grey"></i>
+                                        </a>
+                                        <a href="guide_Q&A_CHT.html"
+                                           class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100" rel="noopener">
+                                            <div class="px-2 pr-3 flex-fill overflow-hidden">
+                                                <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">常見問答集</h3>
+                                            </div>
+                                            <i class="fas fa-chevron-right txt-grey"></i>
+                                        </a>
+                                        <a href="guide_Rolling_CHT.html"
+                                           class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100" rel="noopener">
+                                            <div class="px-2 pr-3 flex-fill overflow-hidden">
+                                                <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">關於取款門檻的說明</h3>
+                                            </div>
+                                            <i class="fas fa-chevron-right txt-grey"></i>
+                                        </a>
+                                        <a href="../instructions-crypto.html"
+                                           class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100" rel="noopener">
+                                            <div class="px-2 pr-3 flex-fill overflow-hidden">
+                                                <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">虛擬貨幣存款說明</h3>
+                                            </div>
+                                            <i class="fas fa-chevron-right txt-grey"></i>
+                                        </a>
+                                        <a href="guide-03_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                                           rel="noopener">
+                                            <div class="px-2 pr-3 flex-fill overflow-hidden">
+                                                <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">百家樂攻略法 - 基礎規則篇</h3>
+                                            </div>
+                                            <i class="fas fa-chevron-right txt-grey"></i>
+                                        </a>
+                                        <a href="guide-04_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                                           rel="noopener">
+                                            <div class="px-2 pr-3 flex-fill overflow-hidden">
+                                                <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">百家樂攻略法 - 中級篇</h3>
+                                            </div>
+                                            <i class="fas fa-chevron-right txt-grey"></i>
+                                        </a>
+                                        <a href="guide-05_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                                           rel="noopener">
+                                            <div class="px-2 pr-3 flex-fill overflow-hidden">
+                                                <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">路單是？ 百家樂的攻略 - 上級篇 1：珠盤路和大路</h3>
+                                            </div>
+                                            <i class="fas fa-chevron-right txt-grey"></i>
+                                        </a>
+                                        <a href="guide-06_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                                           rel="noopener">
+                                            <div class="px-2 pr-3 flex-fill overflow-hidden">
+                                                <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">路單是？ 百家樂的攻略 - 上級篇 2：大眼仔路</h3>
+                                            </div>
+                                            <i class="fas fa-chevron-right txt-grey"></i>
+                                        </a>
+                                        <a href="guide-07_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                                           rel="noopener">
+                                            <div class="px-2 pr-3 flex-fill overflow-hidden">
+                                                <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">路單是？ 百家樂的攻略 - 上級篇 3：小路</h3>
+                                            </div>
+                                            <i class="fas fa-chevron-right txt-grey"></i>
+                                        </a>
+                                        <a href="guide-08_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                                           rel="noopener">
+                                            <div class="px-2 pr-3 flex-fill overflow-hidden">
+                                                <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">路單是？ 百家樂的攻略 - 上級篇 4：小強路</h3>
+                                            </div>
+                                            <i class="fas fa-chevron-right txt-grey"></i>
+                                        </a>
+                                        <a href="guide-09_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                                           rel="noopener">
+                                            <div class="px-2 pr-3 flex-fill overflow-hidden">
+                                                <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">老虎機攻略導覽</h3>
+                                            </div>
+                                            <i class="fas fa-chevron-right txt-grey"></i>
+                                        </a>
+                                        <a href="guide-10_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                                           rel="noopener">
+                                            <div class="px-2 pr-3 flex-fill overflow-hidden">
+                                                <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">德州撲克攻略導覽</h3>
+                                            </div>
+                                            <i class="fas fa-chevron-right txt-grey"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--tabs-->
+                    </div>
+                </div>
+            </article>
+
+
+        </main>
+        <section class="py-4 py-lg-5" style="padding-top:0px !important;display:none;">
+            <!-- 人気記事內容 ================ -->
+            <article class="hotarticle_area container mx-auto one-column">
+                <!--<a href="guide-01_jp.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100" rel="noopener">
+                  <div class="px-2 pr-3 flex-fill overflow-hidden">
+                      <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">カジノとオンラインカジノの違いは？</h3>
+                  </div>
+                  <i class="fas fa-chevron-right txt-grey"></i>
+                </a>
+                <a href="guide-02_jp.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100" rel="noopener">
+                  <div class="px-2 pr-3 flex-fill overflow-hidden">
+                      <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">オンラインカジノを遊ぶことは保障がありますか？</h3>
+                  </div>
+                  <i class="fas fa-chevron-right txt-grey"></i>
+                </a>
+                -->
+                <a href="guide_strengths_CHT.html"
+                   class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100" rel="noopener">
+                    <div class="px-2 pr-3 flex-fill overflow-hidden">
+                        <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">Maharaja的強項！</h3>
+                    </div>
+                    <i class="fas fa-chevron-right txt-grey"></i>
+                </a>
+                <a href="guide_Q&A_CHT.html"
+                   class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100" rel="noopener">
+                    <div class="px-2 pr-3 flex-fill overflow-hidden">
+                        <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">常見問答集</h3>
+                    </div>
+                    <i class="fas fa-chevron-right txt-grey"></i>
+                </a>
+                <a id="withdrawQA" href="guide_Rolling_CHT.html"
+                   class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100" rel="noopener">
+                    <div class="px-2 pr-3 flex-fill overflow-hidden">
+                        <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">關於取款門檻的說明</h3>
+                    </div>
+                    <i class="fas fa-chevron-right txt-grey"></i>
+                </a>
+                <a href="../instructions-crypto.html"
+                   class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100" rel="noopener">
+                    <div class="px-2 pr-3 flex-fill overflow-hidden">
+                        <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">虛擬貨幣存款說明</h3>
+                    </div>
+                    <i class="fas fa-chevron-right txt-grey"></i>
+                </a>
+                <a href="guide-03_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                   rel="noopener">
+                    <div class="px-2 pr-3 flex-fill overflow-hidden">
+                        <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">百家樂攻略法 - 基礎規則篇</h3>
+                    </div>
+                    <i class="fas fa-chevron-right txt-grey"></i>
+                </a>
+                <a href="guide-04_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                   rel="noopener">
+                    <div class="px-2 pr-3 flex-fill overflow-hidden">
+                        <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">百家樂攻略法 - 中級篇</h3>
+                    </div>
+                    <i class="fas fa-chevron-right txt-grey"></i>
+                </a>
+                <a href="guide-05_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                   rel="noopener">
+                    <div class="px-2 pr-3 flex-fill overflow-hidden">
+                        <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">路單是？ 百家樂的攻略 - 上級篇 1：珠盤路和大路</h3>
+                    </div>
+                    <i class="fas fa-chevron-right txt-grey"></i>
+                </a>
+                <a href="guide-06_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                   rel="noopener">
+                    <div class="px-2 pr-3 flex-fill overflow-hidden">
+                        <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">路單是？ 百家樂的攻略 - 上級篇 2：大眼仔路</h3>
+                    </div>
+                    <i class="fas fa-chevron-right txt-grey"></i>
+                </a>
+                <a href="guide-07_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                   rel="noopener">
+                    <div class="px-2 pr-3 flex-fill overflow-hidden">
+                        <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">路單是？ 百家樂的攻略 - 上級篇 3：小路</h3>
+                    </div>
+                    <i class="fas fa-chevron-right txt-grey"></i>
+                </a>
+                <a href="guide-08_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                   rel="noopener">
+                    <div class="px-2 pr-3 flex-fill overflow-hidden">
+                        <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">路單是？ 百家樂的攻略 - 上級篇 4：小強路</h3>
+                    </div>
+                    <i class="fas fa-chevron-right txt-grey"></i>
+                </a>
+                <a href="guide-09_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                   rel="noopener">
+                    <div class="px-2 pr-3 flex-fill overflow-hidden">
+                        <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">老虎機攻略導覽</h3>
+                    </div>
+                    <i class="fas fa-chevron-right txt-grey"></i>
+                </a>
+                <a href="guide-10_CHT.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100"
+                   rel="noopener">
+                    <div class="px-2 pr-3 flex-fill overflow-hidden">
+                        <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">德州撲克攻略導覽</h3>
+                    </div>
+                    <i class="fas fa-chevron-right txt-grey"></i>
+                </a>
+                <!-- <a href="guide-11_jp.html" class="d-flex align-items-center mb-3 p-4 rounded-2 btn white bb text-left w-100" rel="noopener">
+                  <div class="px-2 pr-3 flex-fill overflow-hidden">
+                      <h3 class="mb-1 txt-fw-6 mt-0 txt-medium language_replace">ブロックチェーンー ゲーム攻略ガイド</h3>
+                  </div>
+                  <i class="fas fa-chevron-right txt-grey"></i>
+                </a> -->
+            </article>
+            <!-- 人気ゲーム ================ -->
+            <div class="hotgame_area container py-3 px-2 px-lg-0 mx-auto one-column">
+            </div>
+        </section>
+    </div>
+
+    <div class="float_SideBar">
+
+        <div class="customer-service" onclick="window.parent.showContactUs()" style="display: none;">
+            <a>
+                <div class="text">
+                    <h3 class="title language_replace">カスタマーサービスへ</h3>
+                </div>
+                <div class="img-wrap">
+                    <img src="../images/games/a-chi-service.svg">
+                </div>
+            </a>
+        </div>
+
+        <div class="Line-AddFriend">
+            <a onclick="window.open('https://lin.ee/KD05l9X')">
+                <!-- <span class="qr-code">
+                    <img src="https://qr-official.line.me/sid/M/476uzdvf.png?shortenUrl=true">
+                </span> -->
+                <span class="addFriend">
+                    <span class="logo"><img src="../images/assets/LINE/Line_W.png" alt=""></span>
+                    <!-- <span class="text language_replace">加入好友</span> -->
+                </span>
+            </a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+    <!--<script src='js/main.js'></script>-->
+    <script>
+        function getCookie(name) {
+            var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+            return v ? v[2] : null;
+        }
+
+
+        if (getCookie('cookie_consent')) {
+            // SCRIPT NAME: xtremepush
+            (function (p, u, s, h, e, r, l, i, b) {
+                p['XtremePushObject'] = s;
+                p[s] = function () {
+                    (p[s].q = p[s].q || []).push(arguments)
+                };
+                i = u.createElement('script');
+                i.async = 1;
+                i.src = h;
+                b = u.getElementsByTagName('script')[0];
+                b.parentNode.insertBefore(i, b);
+                i.onload = function () {
+                    if (typeof window.dataLayer === 'undefined') {
+                        window.dataLayer = [];
+                    } else {
+                        window.dataLayer.push({
+                            'event': 'xp_sdk_loaded'
+                        });
+
+                        // Wordpress doesn't use sessions -> solution? -> Maybe create a unqiue ID for every user visiting site. How to handle returning users? Cookie!
+                        // xp_http.open("POST", "/services/sessions/json-id", true);
+                        // xp_http.send();
+                    }
+                };
+            })(window, document, 'xtremepush', 'https://cdn.webpu.sh/D-78tQ9V-iLG5U6_j80fZyc_-MH80D9f/sdk.js');
+
+            var xp_http = new XMLHttpRequest();
+            xp_http.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var response = JSON.parse(this.responseText);
+                    if (response.session_id) {
+                        xtremepush('set', 'user_id', response.session_id);
+                    }
+                }
+            };
+
+
+
+        }
+
+        function getOrginPath() {
+            var temp;
+            temp = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+            temp = temp.substring(0, temp.lastIndexOf('.'));
+
+            if (temp.lastIndexOf('_') != -1) {
+                temp = temp.substring(0, temp.lastIndexOf('_'));
+            }
+
+            return temp;
+        }
+
+        function init() {
+            if (window.parent != window.top) {
+                window.parent.location.href = "index.aspx";
+            }
+            checkParams(function () {
+                window.parent.API_LoadingEnd();
+            });
+        }
+
+        function EWinEventNotify(eventName, isDisplay, param) {
+            switch (eventName) {
+                case "LoginState":
+                    //updateBaseInfo();
+
+                    break;
+                case "BalanceChange":
+                    break;
+                case "SetLanguage":
+                    var orgin = getOrginPath();
+
+                    switch (param) {
+                        case "JPN":
+                            orgin = "/Article/guide_Q&A_JPN.html";
+                            break;
+                        case "CHT":
+                            orgin = "/Article/guide_Q&A_CHT.html";
+                            break;
+                        case "ENG":
+                            orgin = "/Article/guide_Q&A_ENG.html";
+                            break;
+                        default:
+                            break;
+                    }
+
+                    window.parent.API_LoadPage("Article", orgin);
+                    break;
+            }
+        }
+
+        function checkParams(cb) {
+            let queryString = window.location.search;
+            let urlParams;
+            let tag;
+            if (queryString != "") {
+                urlParams = new URLSearchParams(queryString);
+                tag = urlParams.get('tagID');
+
+                let k = document.getElementById(tag);
+                k.click();
+            }
+
+            if (cb) {
+                cb();
+            }
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
